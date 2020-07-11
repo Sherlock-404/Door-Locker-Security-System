@@ -18,15 +18,19 @@ typedef unsigned char bool;
 
 /* Boolean Values */
 #ifndef FALSE
-#define FALSE (0u)
+#define FALSE (0)
 #endif
 
 #ifndef TRUE
-#define TRUE (1u)
+#define TRUE (1)
 #endif
 
-#define HIGH (1u)
-#define LOW (0u)
+#ifndef NULL
+#define NULL (void *)0
+#endif
+
+#define HIGH (1)
+#define LOW (0)
 
 typedef unsigned char uint8;       /*           0 .. 255             */
 typedef signed char sint8;         /*        -128 .. +127            */

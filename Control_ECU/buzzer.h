@@ -1,41 +1,29 @@
 /******************************************************************************
  *
- * Module: KEYPAD
+ * Module: BUZZER
  *
- * File Name: keypad.h
+ * File Name: buzzer.h
  *
- * Description: Header file for the Keypad driver
+ * Description: Header file for the buzzer driver
  *
  * Engineer: Youssef Taha
  *
  *******************************************************************************/
-
-#ifndef KEYPAD_H_
-#define KEYPAD_H_
-
-#include "std_types.h"
+#ifndef BUZZER_H_
+#define BUZZER_H_
 #include "micro_config.h"
+#include "std_types.h"
 #include "common_macros.h"
-
 /*******************************************************************************
  *                      Preprocessor Macros                                    *
  *******************************************************************************/
-
-/* Keypad configurations for number of rows and columns */
-#define N_col 4
-#define N_row 4
-/* Keypad Port Configurations */
-#define KEYPAD_PORT_OUT PORTA
-#define KEYPAD_PORT_IN PINA
-#define KEYPAD_PORT_DIR DDRA
-
+#define BUZZER_CTRL_PORT PORTD
+#define BUZZER_CTRL_PORT_DIR DDRD
+#define BUZZER_PIN PD2
 /*******************************************************************************
  *                      Functions Prototypes                                   *
  *******************************************************************************/
-
-/*
-/* Function responsible for getting the pressed keypad key
- */
-uint8 KeyPad_getPressedKey(void);
-
-#endif /* KEYPAD_H_ */
+void Buzzer_init(void);
+void Buzzer_on(void);
+void Buzzer_off(void);
+#endif

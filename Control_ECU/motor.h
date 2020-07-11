@@ -1,41 +1,31 @@
 /******************************************************************************
  *
- * Module: KEYPAD
+ * Module: MOTOR
  *
- * File Name: keypad.h
+ * File Name: motor.h
  *
- * Description: Header file for the Keypad driver
+ * Description: Header file for the MOTOR driver
  *
  * Engineer: Youssef Taha
  *
  *******************************************************************************/
-
-#ifndef KEYPAD_H_
-#define KEYPAD_H_
-
-#include "std_types.h"
+#ifndef MOTOR_H_
+#define MOTOR_H_
 #include "micro_config.h"
+#include "std_types.h"
 #include "common_macros.h"
-
 /*******************************************************************************
  *                      Preprocessor Macros                                    *
  *******************************************************************************/
-
-/* Keypad configurations for number of rows and columns */
-#define N_col 4
-#define N_row 4
-/* Keypad Port Configurations */
-#define KEYPAD_PORT_OUT PORTA
-#define KEYPAD_PORT_IN PINA
-#define KEYPAD_PORT_DIR DDRA
-
+#define MOTOR_CTRL_PORT PORTA
+#define MOTOR_CTRL_PORT_DIR DDRA
+#define MOTOR_PIN1 PA0
+#define MOTOR_PIN2 PA1
 /*******************************************************************************
  *                      Functions Prototypes                                   *
  *******************************************************************************/
-
-/*
-/* Function responsible for getting the pressed keypad key
- */
-uint8 KeyPad_getPressedKey(void);
-
-#endif /* KEYPAD_H_ */
+void MOTOR_init(void);
+void MOTOR_clockwise(void);
+void MOTOR_AntiClockwise(void);
+void MOTOR_stop(void);
+#endif

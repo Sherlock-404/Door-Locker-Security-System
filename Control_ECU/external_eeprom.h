@@ -1,41 +1,32 @@
 /******************************************************************************
  *
- * Module: KEYPAD
+ * Module: External EEPROM
  *
- * File Name: keypad.h
+ * File Name: external_eeprom.h
  *
- * Description: Header file for the Keypad driver
+ * Description: Header file for the External EEPROM Memory
  *
  * Engineer: Youssef Taha
  *
  *******************************************************************************/
 
-#ifndef KEYPAD_H_
-#define KEYPAD_H_
+#ifndef EXTERNAL_EEPROM_H_
+#define EXTERNAL_EEPROM_H_
 
 #include "std_types.h"
-#include "micro_config.h"
-#include "common_macros.h"
 
 /*******************************************************************************
  *                      Preprocessor Macros                                    *
  *******************************************************************************/
 
-/* Keypad configurations for number of rows and columns */
-#define N_col 4
-#define N_row 4
-/* Keypad Port Configurations */
-#define KEYPAD_PORT_OUT PORTA
-#define KEYPAD_PORT_IN PINA
-#define KEYPAD_PORT_DIR DDRA
+#define ERROR 0
+#define SUCCESS 1
 
 /*******************************************************************************
  *                      Functions Prototypes                                   *
  *******************************************************************************/
+void EEPROM_init(void);
+uint8 EEPROM_writeByte(uint16 u16addr, uint8 u8data);
+uint8 EEPROM_readByte(uint16 u16addr, uint8 *u8data);
 
-/*
-/* Function responsible for getting the pressed keypad key
- */
-uint8 KeyPad_getPressedKey(void);
-
-#endif /* KEYPAD_H_ */
+#endif /* EXTERNAL_EEPROM_H_ */
