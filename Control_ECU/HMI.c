@@ -182,3 +182,23 @@ void open_mechanism(void)
         Timer1_DeInit();
     }
 }
+/******************************************************************************/
+void idle_mode(void)
+{
+    switch (UART_recieveByte())
+    {
+    case new_password:
+        save_password();
+        break;
+    case compare_passwords:
+        get_password();
+        authenticate_password();
+        break;
+    case open_gate:
+        open();
+        break;
+    case theif:
+        alarm_on();
+        break;
+    }
+}

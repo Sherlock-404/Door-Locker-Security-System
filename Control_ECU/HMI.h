@@ -46,4 +46,5 @@ void open(void);
 void alarm_on(void);
 void alarm_off(void);
 void open_mechanism(void);
+void idle_mode(void);
 #endif
